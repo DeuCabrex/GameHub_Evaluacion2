@@ -1,9 +1,20 @@
+import { useState, useEffect } from 'react'
 import logoImg from '../assets/gamehub.png'
 import mikuGpuImg from '../assets/grafica_miku.png'
 import laptopImg from '../assets/Asus_Laptop.png'
 import promoVideo from '../assets/videoplayback.mp4'
 
 export function Home() {
+  const [indexBanner, setIndexBanner] = useState(0)
+
+  useEffect(() => {
+    const intervalo = setInterval(() => {
+      setIndexBanner((prev) => (prev === 0 ? 1 : 0))
+    }, 3000)
+
+    return () => clearInterval(intervalo)
+  }, [])
+
   return (
     <div>
       {/* Header */}
@@ -28,49 +39,52 @@ export function Home() {
 
       <main>
         <section className="carrusel-simple">
-          {/* Grafica Miku png*/}
-          <article className="slide-banner slide-activo">
-            <div className="banner-img-container">
-              <img src={mikuGpuImg} alt="Asus ROG Hatsune Miku RTX 5080" />
-            </div>
-            <div className="banner-info">
-              <span className="badge-destacado">🔥 Edición Limitada</span>
-              <h2>Asus ROG Astral RTX 5080</h2>
-              <p className="subtitulo-miku">Hatsune Miku Edition</p>
-              <ul className="specs-lista">
-                <li>16GB GDDR7 VRAM</li>
-                <li>Ray Tracing & DLSS 4</li>
-                <li>Sistema de enfriamiento ROG Astral</li>
-              </ul>
-              <div className="banner-precio-box">
-                <span className="precio-banner">$1.499.990</span>
-                <a href="#" className="btn-banner">Comprar Ahora</a>
+          {indexBanner === 0 ? (
+            /* Grafica Miku png*/
+            <article className="slide-banner slide-activo">
+              <div className="banner-img-container">
+                <img src={mikuGpuImg} alt="Asus ROG Hatsune Miku RTX 5080" />
               </div>
-            </div>
-          </article>
-
-          {/*Asus Laptop */}
-          <article className="slide-banner">
-            <div className="banner-img-container">
-              <img src={laptopImg} alt="Notebook Gamer Asus ROG Strix" />
-            </div>
-            <div className="banner-info">
-              <span className="badge-destacado">💻 Alto Rendimiento</span>
-              <h2>Asus ROG Strix Scar 18</h2>
-              <p className="subtitulo-miku">Poder Gamer Portátil</p>
-              <ul className="specs-lista">
-                <li>Intel Core i9 / RTX 4080</li>
-                <li>Pantalla 18" 240Hz QHD+</li>
-                <li>32GB RAM + 1TB SSD NVMe</li>
-              </ul>
-              <div className="banner-precio-box">
-                <span className="precio-banner">$2.299.990</span>
-                <a href="#" className="btn-banner">Comprar Ahora</a>
+              <div className="banner-info">
+                <span className="badge-destacado">🔥 Edición Limitada</span>
+                <h2>Asus ROG Astral RTX 5080</h2>
+                <p className="subtitulo-miku">Hatsune Miku Edition</p>
+                <ul className="specs-lista">
+                  <li>16GB GDDR7 VRAM</li>
+                  <li>Ray Tracing & DLSS 4</li>
+                  <li>Sistema de enfriamiento ROG Astral</li>
+                </ul>
+                <div className="banner-precio-box">
+                  <span className="precio-banner">$1.499.990</span>
+                  <a href="#" className="btn-banner">Comprar Ahora</a>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
+          ) : (
+            /*Asus Laptop */
+            <article className="slide-banner slide-activo">
+              <div className="banner-img-container">
+                <img src={laptopImg} alt="Notebook Gamer Asus ROG Strix" />
+              </div>
+              <div className="banner-info">
+                <span className="badge-destacado">💻 Alto Rendimiento</span>
+                <h2>Asus ROG Strix Scar 18</h2>
+                <p className="subtitulo-miku">Poder Gamer Portátil</p>
+                <ul className="specs-lista">
+                  <li>Intel Core i9 / RTX 4080</li>
+                  <li>Pantalla 18" 240Hz QHD+</li>
+                  <li>32GB RAM + 1TB SSD NVMe</li>
+                </ul>
+                <div className="banner-precio-box">
+                  <span className="precio-banner">$2.299.990</span>
+                  <a href="#" className="btn-banner">Comprar Ahora</a>
+                </div>
+              </div>
+            </article>
+          )}
         </section>
-          {/*Grafica miku video*/}
+
+        {/*Grafica miku video*/}
         <section className="video-container">
           <video autoPlay muted loop playsInline>
             <source src={promoVideo} type="video/mp4" />
@@ -109,7 +123,6 @@ export function Home() {
           </div>
         </section>
       </main>
-
 
       <footer>
         <p>© 2026 GameHub Store - Proyecto Desarrollo FullStack II</p>
