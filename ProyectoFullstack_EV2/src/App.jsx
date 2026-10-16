@@ -19,7 +19,6 @@ function ContenidoApp() {
 
   return (
     <div className="d-flex flex-column min-vh-100">
-      {/* Navbar con el diseño de tu Header original */}
       <Navbar vistaActual={vistaActual} setVistaActual={setVistaActual} />
 
       <main className="flex-grow-1">
@@ -31,7 +30,10 @@ function ContenidoApp() {
         )}
         {vistaActual === 'catalogo' && <Catalogo />}
         {vistaActual === 'carrito' && (
-          <Carrito onIrACheckout={() => setVistaActual('checkout')} />
+          <Carrito 
+            onIrACheckout={() => setVistaActual('checkout')} 
+            onIrACatalogo={() => setVistaActual('catalogo')}
+          />
         )}
         {vistaActual === 'checkout' && (
           <Checkout onCompraFinalizada={handleFinalizarCompra} />

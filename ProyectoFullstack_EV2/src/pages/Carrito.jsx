@@ -1,9 +1,8 @@
-// src/pages/Carrito.jsx
 import { useContext, useState } from 'react';
 import { CarritoContext } from '../context/CarritoContext';
 import { CUPONES } from '../data/productosData';
 
-export default function Carrito({ onIrACheckout }) {
+export default function Carrito({ onIrACheckout, onIrACatalogo }) {
   const {
     carrito,
     cambiarCantidad,
@@ -36,8 +35,18 @@ export default function Carrito({ onIrACheckout }) {
   if (carrito.length === 0) {
     return (
       <div className="container text-center py-5">
-        <h2 className="h4 text-secondary mb-3">Tu carrito de compras está vacío</h2>
-        <p className="text-muted">Añade productos desde el catálogo para comenzar la compra.</p>
+        <h2 className="h4 mb-3" style={{ color: 'var(--color-primario)' }}>
+          Tu carrito de compras está vacío
+        </h2>
+        <p className="mb-4" style={{ color: 'var(--color-texto)' }}>
+          Añade productos desde el catálogo para comenzar la compra.
+        </p>
+        <button 
+          className="btn btn-banner btn-md fw-bold" 
+          onClick={onIrACatalogo}
+        >
+          Ir al Catálogo
+        </button>
       </div>
     );
   }

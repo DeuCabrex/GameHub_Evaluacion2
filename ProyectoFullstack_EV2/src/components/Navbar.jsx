@@ -1,4 +1,3 @@
-// src/components/Navbar.jsx
 import { useContext } from 'react';
 import { CarritoContext } from '../context/CarritoContext';
 import logoImg from '../assets/gamehub.png';
@@ -36,8 +35,8 @@ export default function Navbar({ vistaActual, setVistaActual }) {
           <li>
             <a
               href="#ordenes"
-              className={vistaActual === 'checkout' ? 'activo' : ''}
-              onClick={(e) => { e.preventDefault(); setVistaActual('checkout'); }}
+              className={vistaActual === 'ordenes' ? 'activo' : ''}
+              onClick={(e) => e.preventDefault()}
             >
               ÓRDENES
             </a>
