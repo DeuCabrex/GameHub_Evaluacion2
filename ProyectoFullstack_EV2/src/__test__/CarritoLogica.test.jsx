@@ -52,7 +52,7 @@ describe('Pruebas Unitarias de Lógica del Carrito (Requerimientos 1 al 6)', () 
   })
 
   it('3. validarStock impide una cantidad mayor al stock disponible', () => {
-    expect(validarStock(5, 3)).toBeFalse ? expect(validarStock(5, 3)).toBe(false) : expect(validarStock(5, 3)).toBe(false)
+    expect(validarStock(5, 3)).toBe(false)
     expect(validarStock(2, 3)).toBe(true)
   })
 
