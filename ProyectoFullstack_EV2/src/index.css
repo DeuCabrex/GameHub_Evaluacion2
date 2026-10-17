@@ -20,9 +20,9 @@
 }
 
 body {
-  background-color: var(--color-fondo);
-  color: var(--color-texto);
-  font-family: var(--fuente-principal);
+  background-color: var(--color-fondo) !important;
+  color: var(--color-texto) !important;
+  font-family: var(--fuente-principal) !important;
   line-height: 1.5;
   min-height: 100vh;
   display: flex;
@@ -33,6 +33,7 @@ main {
   flex: 1; 
 }
 
+/* Header principal */
 header {
   position: relative;
   display: flex;
@@ -70,6 +71,7 @@ header h1 {
   text-decoration: none;
   font-size: 1.1rem;
   transition: color 0.2s ease;
+  cursor: pointer;
 }
 
 .nav a:hover, .nav a.activo {
@@ -77,6 +79,7 @@ header h1 {
   font-weight: 600;
 }
 
+/* Carrusel y Banner */
 .carrusel-simple {
   display: flex;
   overflow-x: auto;
@@ -176,6 +179,7 @@ header h1 {
   font-weight: bold;
   text-decoration: none;
   transition: transform 0.2s ease, background-color 0.2s ease;
+  cursor: pointer;
 }
 
 .btn-banner:hover {
@@ -183,6 +187,43 @@ header h1 {
   background-color: #82d1ff;
 }
 
+/* Estilos de tarjetas y paneles para Catálogo y Carrito */
+.card, .table-responsive {
+  background-color: var(--color-superficie) !important;
+  border: 1px solid var(--color-borde) !important;
+  color: var(--color-texto) !important;
+  border-radius: var(--radio-borde) !important;
+}
+
+.card-title, .form-label, h2, h3, h4, h5 {
+  color: #FFFFFF !important;
+}
+
+.form-control, .form-select {
+  background-color: var(--color-fondo) !important;
+  border: 1px solid var(--color-borde) !important;
+  color: #FFFFFF !important;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--color-primario) !important;
+  box-shadow: 0 0 0 0.25rem rgba(102, 192, 244, 0.25) !important;
+}
+
+.table {
+  color: var(--color-texto) !important;
+}
+
+.table th {
+  color: var(--color-primario) !important;
+  border-bottom-color: var(--color-borde) !important;
+}
+
+.table td {
+  border-bottom-color: var(--color-borde) !important;
+}
+
+/* Video, Sobre Nosotros y Ubicación */
 .video-container {
   display: flex;
   justify-content: center;
