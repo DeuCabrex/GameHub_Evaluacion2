@@ -43,7 +43,6 @@ export default function Checkout({ onCompraFinalizada }) {
     const numOrden = `#2026${Math.floor(Math.random() * 9000 + 1000)}`;
 
     if (exito) {
-      // 1. Crear el objeto de la orden formateado para Ordenes.jsx
       const nuevaOrden = {
         id: numOrden,
         fecha: new Date().toLocaleDateString('es-CL'),
@@ -61,7 +60,6 @@ export default function Checkout({ onCompraFinalizada }) {
         }))
       };
 
-      // 2. Guardar en localStorage para que la vista Órdenes lo lea
       try {
         const ordenesPrevias = JSON.parse(localStorage.getItem('gamehub_ordenes')) || [];
         const ordenesActualizadas = [nuevaOrden, ...ordenesPrevias];
@@ -70,7 +68,6 @@ export default function Checkout({ onCompraFinalizada }) {
         console.error("Error al guardar la orden en localStorage:", error);
       }
 
-      // 3. Limpiar carrito y continuar el flujo
       vaciarCarrito();
       onCompraFinalizada({ estado: 'exito', orden: numOrden, datos: form, total });
     } else {
