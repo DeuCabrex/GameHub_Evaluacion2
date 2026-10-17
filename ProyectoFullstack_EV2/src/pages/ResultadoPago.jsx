@@ -29,7 +29,6 @@ export default function ResultadoPago({ resultado, onVolver }) {
           Número de orden: {resultado?.orden || '#20260000'}
         </p>
 
-        {/* Detalle de la transacción sin fondo blanco */}
         <div 
           className="p-3 rounded mb-4 text-start" 
           style={{ 
