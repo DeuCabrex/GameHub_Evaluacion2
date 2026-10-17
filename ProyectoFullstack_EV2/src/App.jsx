@@ -6,7 +6,7 @@ import Catalogo from './pages/Catalogo';
 import Carrito from './pages/Carrito';
 import Checkout from './pages/Checkout';
 import ResultadoPago from './pages/ResultadoPago';
-import MisOrdenes from './pages/MisOrdenes'; // <-- 1. Importar la nueva vista
+import Ordenes from './pages/Ordenes'; // <-- 1. Importar la nueva vista
 import { CarritoProvider } from './context/CarritoContext';
 
 function ContenidoApp() {
@@ -45,11 +45,6 @@ function ContenidoApp() {
             onVolver={() => setVistaActual('catalogo')}
           />
         )}
-<<<<<<< HEAD
-        {/* 2. Condición para mostrar MisÓrdenes */}
-        {vistaActual === 'ordenes' && <MisOrdenes />}
-=======
->>>>>>> da12f49d07394ae245906b9a9988a84c638b1327
       </main>
 
       <footer>
