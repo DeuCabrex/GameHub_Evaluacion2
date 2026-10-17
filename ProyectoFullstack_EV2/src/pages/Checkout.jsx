@@ -43,6 +43,34 @@ export default function Checkout({ onCompraFinalizada }) {
     const numOrden = `#2026${Math.floor(Math.random() * 9000 + 1000)}`;
 
     if (exito) {
+      // 1. Crear el objeto de la orden formateado para Ordenes.jsx
+      const nuevaOrden = {
+        id: numOrden,
+        fecha: new Date().toLocaleDateString('es-CL'),
+        cliente: `${form.nombre} ${form.apellido}`.trim(),
+        correo: form.correo,
+        direccion: `${form.calle}, ${form.comuna}`.trim(),
+        total: total,
+        estado: 'Aprobado',
+        productos: carrito.map(item => ({
+          id: item.id,
+          nombre: item.nombre,
+          cantidad: item.cantidad,
+          precio: item.precio,
+          subtotal: item.precio * item.cantidad
+        }))
+      };
+
+      // 2. Guardar en localStorage para que la vista Órdenes lo lea
+      try {
+        const ordenesPrevias = JSON.parse(localStorage.getItem('gamehub_ordenes')) || [];
+        const ordenesActualizadas = [nuevaOrden, ...ordenesPrevias];
+        localStorage.setItem('gamehub_ordenes', JSON.stringify(ordenesActualizadas));
+      } catch (error) {
+        console.error("Error al guardar la orden en localStorage:", error);
+      }
+
+      // 3. Limpiar carrito y continuar el flujo
       vaciarCarrito();
       onCompraFinalizada({ estado: 'exito', orden: numOrden, datos: form, total });
     } else {
@@ -144,7 +172,6 @@ export default function Checkout({ onCompraFinalizada }) {
               </select>
             </div>
 
-            {/* Simulación de Tarjeta de Crédito / Débito */}
             <h5 className="fw-bold mb-3 mt-3" style={{ color: 'var(--color-primario)' }}>
               3. Medio de Pago (Simulación de Tarjeta)
             </h5>
