@@ -45,8 +45,11 @@ function ContenidoApp() {
             onVolver={() => setVistaActual('catalogo')}
           />
         )}
+<<<<<<< HEAD
         {/* 2. Condición para mostrar MisÓrdenes */}
         {vistaActual === 'ordenes' && <MisOrdenes />}
+=======
+>>>>>>> da12f49d07394ae245906b9a9988a84c638b1327
       </main>
 
       <footer>
