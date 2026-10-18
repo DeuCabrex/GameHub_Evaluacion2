@@ -4,7 +4,6 @@ module.exports = function (config) {
     basePath: '',
     frameworks: ['jasmine'],
 
-    // Usar 'src/**/*.spec.js*' para evitar el fallo de mtime en Karma
     files: [
       { pattern: 'src/**/*.spec.js*', watched: false, type: 'module' }
     ],
@@ -24,7 +23,8 @@ module.exports = function (config) {
 
     reporters: ['progress'],
 
-    browsers: ['Edge'], 
+    // Cambiado a Chrome
+    browsers: ['Chrome'], 
 
     singleRun: true,
     autoWatch: false,
