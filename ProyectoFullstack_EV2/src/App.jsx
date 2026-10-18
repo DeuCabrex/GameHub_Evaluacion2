@@ -51,7 +51,6 @@ function ContenidoApp() {
           />
         )}
 
-        {/* Muestra el listado de órdenes y el panel de reseñas */}
         {vistaActual === 'ordenes' && <Ordenes />}
       </main>
 
