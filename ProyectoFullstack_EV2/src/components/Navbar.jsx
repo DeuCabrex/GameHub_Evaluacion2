@@ -36,7 +36,7 @@ export default function Navbar({ vistaActual, setVistaActual }) {
             <a
               href="#ordenes"
               className={vistaActual === 'ordenes' ? 'activo' : ''}
-              onClick={(e) => e.preventDefault()}
+              onClick={(e) => { e.preventDefault(); setVistaActual('ordenes'); }}
             >
               ÓRDENES
             </a>

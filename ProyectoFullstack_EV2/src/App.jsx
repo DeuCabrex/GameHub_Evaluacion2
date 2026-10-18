@@ -6,6 +6,7 @@ import Catalogo from './pages/Catalogo';
 import Carrito from './pages/Carrito';
 import Checkout from './pages/Checkout';
 import ResultadoPago from './pages/ResultadoPago';
+import Ordenes from './pages/Ordenes';
 import { CarritoProvider } from './context/CarritoContext';
 
 function ContenidoApp() {
@@ -28,22 +29,29 @@ function ContenidoApp() {
             onIrACarrito={() => setVistaActual('carrito')}
           />
         )}
+
         {vistaActual === 'catalogo' && <Catalogo />}
+
         {vistaActual === 'carrito' && (
           <Carrito 
             onIrACheckout={() => setVistaActual('checkout')} 
             onIrACatalogo={() => setVistaActual('catalogo')}
           />
         )}
+
         {vistaActual === 'checkout' && (
           <Checkout onCompraFinalizada={handleFinalizarCompra} />
         )}
+
         {vistaActual === 'resultado' && (
           <ResultadoPago
             resultado={resultadoCompra}
             onVolver={() => setVistaActual('catalogo')}
+            onVerOrdenes={() => setVistaActual('ordenes')}
           />
         )}
+
+        {vistaActual === 'ordenes' && <Ordenes />}
       </main>
 
       <footer>
