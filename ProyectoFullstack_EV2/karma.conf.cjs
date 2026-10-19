@@ -23,7 +23,6 @@ module.exports = function (config) {
 
     reporters: ['progress'],
 
-    // Cambiado a Chrome
     browsers: ['Chrome'], 
 
     singleRun: true,
