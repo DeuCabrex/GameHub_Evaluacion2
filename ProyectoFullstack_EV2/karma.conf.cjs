@@ -15,7 +15,7 @@ module.exports = function (config) {
     esbuild: {
       target: 'es2022',
       jsx: 'automatic',
-      loader: { '.js': 'jsx', '.jsx': 'jsx' },
+      loader: { '.js': 'jsx'},
       define: {
         'process.env.NODE_ENV': JSON.stringify('development')
       }
