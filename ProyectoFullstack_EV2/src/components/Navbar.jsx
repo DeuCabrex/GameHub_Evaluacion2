@@ -1,6 +1,5 @@
 import { useContext } from 'react';
 import { CarritoContext } from '../context/CarritoContext';
-import logoImg from '../assets/gamehub.png';
 
 export default function Navbar({ vistaActual, setVistaActual }) {
   const { carrito } = useContext(CarritoContext);
@@ -9,7 +8,7 @@ export default function Navbar({ vistaActual, setVistaActual }) {
   return (
     <header className="header">
       <div className="logo cursor-pointer" onClick={() => setVistaActual('home')}>
-        <img src={logoImg} alt="Logo GameHub Store" />
+        <img src= '/gamehub.png' alt="Logo GameHub Store" />
       </div>
       <h1>GameHub Store</h1>
       <nav className="nav">
