@@ -85,7 +85,9 @@ export function Home({ onIrACatalogo }) {
       <section className="sobre-nosotros">
         <h2>Sobre GameHub Store</h2>
         <p>
-          En <strong>GameHub Store</strong> nacimos con un propósito claro: equipar a la comunidad gamer y creadora con la tecnología de más alto rendimiento en el mercado...
+          En <strong>GameHub Store</strong> En GameHub Store nacimos con un propósito claro: equipar a la comunidad gamer y creadora con la tecnología de más alto rendimiento en el mercado. Somos un e-commerce especializado en la venta de componentes de PC, notebooks de alta gama, periféricos y hardware de última generación, reuniendo a marcas líderes como Asus ROG, Nvidia y AMD en un solo lugar.
+
+Nuestra plataforma está diseñada para ofrecerte una experiencia de compra fluida, transparente e intuitiva. Nos apasiona cada componente que catalogamos —desde una GPU de edición especial hasta el teclado mecánico más preciso— porque sabemos que detrás de cada actualización de hardware hay una meta: optimizar tu espacio de juego, potenciar tu productividad y llevar tu experiencia gráfica al límite.
         </p>
         <p className="slogan-destacado">
           En GameHub Store no solo vendemos piezas; construimos el motor de tu setup.
